@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Refinement Exercise - Cronvall Vision Workshop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2d3748;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            color: #718096;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .instructions {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .instructions h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+        
+        .instructions li {
+            margin-bottom: 15px;
+        }
+        
+        .instructions strong {
+            color: #2d3748;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .vision-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .vision-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .vision-card h2 {
+            color: #667eea;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .vision-statement {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            font-style: italic;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #2d3748;
+            margin-bottom: 25px;
+        }
+        
+        .vision-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .detail-box {
+            background: #fff;
+            border: 2px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .detail-box h4 {
+            color: #667eea;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .detail-box p {
+            color: #4a5568;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .why-it-works {
+            background: #e6fffa;
+            padding: 20px;
+            border-radius: 8px;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+        
+        .why-it-works h4 {
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        .tests-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .tests-section h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .test-item {
+            padding: 15px;
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+        
+        .test-item strong {
+            color: #2d3748;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .test-item p {
+            color: #4a5568;
+            font-size: 14px;
+        }
+        
+        .refinement-prompt {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .refinement-prompt h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        
+        .prompt-list {
+            padding-left: 20px;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+        
+        .prompt-list li {
+            margin-bottom: 10px;
+        }
+        
+        .reminder-box {
+            background: #fff5f5;
+            border: 2px solid #667eea;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            color: #2d3748;
+            font-weight: 600;
+        }
+        
+        .timer {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            font-size: 18px;
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 24px;
+            }
+            
+            .vision-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .test-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timer {
+                bottom: 20px;
+                right: 20px;
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Vision Refinement Exercise</h1>
+            <p class="subtitle">Choose a direction and refine it—or create something completely new</p>
+            
+            <div class="instructions">
+                <h3>Exercise Instructions</h3>
+                <ol>
+                    <li>
+                        <strong>Pick one vision direction below OR create your own</strong>
+                        Review all three thought starters, then either refine one or develop something entirely different
+                    </li>
+                    <li>
+                        <strong>Work in teams of 2</strong>
+                        Collaborate to refine and strengthen your chosen vision
+                    </li>
+                    <li>
+                        <strong>You have 20 minutes</strong>
+                        Focus on creating a vision that passes all four tests below
+                    </li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="vision-cards">
+            <div class="vision-card">
+                <h2>A. THE CONFIDENCE BUILDER</h2>
+                
+                <div class="vision-statement">
+                    "Construction professionals become heroes of reliability—delivering every project with unshakable confidence, free from procurement stress, while their teams focus purely on building quality and success."
+                </div>
+                
+                <div class="vision-details">
+                    <div class="detail-box">
+                        <h4>Individual Success</h4>
+                        <p>Recognition, career advancement, stress reduction</p>
+                    </div>
+                    <div class="detail-box">
+                        <h4>Company Success</h4>
+                        <p>Better project outcomes, happier teams, improved margins</p>
+                    </div>
+                    <div class="detail-box">
+                        <h4>Category Implication</h4>
+                        <p>Professional empowerment platform</p>
+                    </div>
+                    <div class="detail-box">
+                        <h4>Future-Proof</h4>
+                        <p>Works whether they're hands-on buyers or managing AI agents</p>
+                    </div>
+                </div>
+                
+                <div class="why-it-works">
+                    <h4>Why it works</h4>
+                    Inspires individual pride and career growth while promising better company outcomes through team focus. Has emotional hook ("heroes of reliability") without being fluffy.
+                </div>
+            </div>
+            
+            <div class="vision-card">
+                <h2>B. THE TRUST INFRASTRUCTURE</h2>
+                
+                <div class="vision-statement">
+                    "Construction professionals sleep well knowing tomorrow's materials are guaranteed—no supplier failures, no price surprises, no delivery chaos disrupting their projects, building reputations that win the projects they truly want."
+                </div>
+                
+                <div class="vision-details">
+                    <div class="detail-box">
+                        <h4>Individual Success</h4>
+                        <p>Peace of mind, professional confidence, control</p>
+                    </div>
+                    <div class="detail-box">
+                        <h4>Company Success</h4>
+                        <p>Predictable project execution, reputation-based growth</p>
+                    </div>
+                    <div class="detail-box">
+                        <h4>Category Implication</h4>
+                        <p>Professional reliability infrastructure</p>
+                    </div>
+                    <div class="detail-box">
+                        <h4>Future-Proof</h4>
+                        <p>Trust matters regardless of technology evolution</p>
+                    </div>
+                </div>
+                
+                <div class="why-it-works">
+                    <h4>Why it works</h4>
+                    Grounded in credibility, trust, and reliability. Speaks to the core professional identity of builders. Rational but still aspirational.
+                </div>
+            </div>
+            
+            <div class="vision-card">
+                <h2>C. THE CAPABILITY AMPLIFIER</h2>
+                
+                <div class="vision-statement">
+                    "Any company, regardless of size, can compete and win against enterprise players by accessing enterprise-level procurement power without the complexity—redefining what size means in construction."
+                </div>
+                
+                <div class="vision-details">
+                    <div class="detail-box">
+                        <h4>Individual Success</h4>
+                        <p>Empowerment to punch above weight</p>
+                    </div>
+                    <div class="detail-box">
+                        <h4>Company Success</h4>
+                        <p>Market positioning, growth capability, winning bigger contracts</p>
+                    </div>
+                    <div class="detail-box">
+                        <h4>Category Implication</h4>
+                        <p>SME empowerment platform</p>
+                    </div>
+                    <div class="detail-box">
+                        <h4>Future-Proof</h4>
+                        <p>Levels playing field in any scenario</p>
+                    </div>
+                </div>
+                
+                <div class="why-it-works">
+                    <h4>Why it works</h4>
+                    David vs. Goliath narrative is powerful. Democratization story that excites. Clear competitive advantage for SMEs.
+                </div>
+            </div>
+        </div>
+        
+        <div class="tests-section">
+            <h3>Your Vision Must Pass These Tests</h3>
+            
+            <div class="test-grid">
+                <div class="test-item">
+                    <strong>✓ Dual Success Test</strong>
+                    <p>Makes BOTH the individual buyer look smart AND advances their company</p>
+                </div>
+                <div class="test-item">
+                    <strong>✓ Category Test</strong>
+                    <p>Creates a new category, not just improvement of existing ones</p>
+                </div>
+                <div class="test-item">
+                    <strong>✓ Future Test</strong>
+                    <p>Inspires action today while pointing to the future</p>
+                </div>
+                <div class="test-item">
+                    <strong>✓ Emotion Test</strong>
+                    <p>Would a project manager excitedly tell their family about this over dinner?</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="refinement-prompt">
+            <h3>Focus Your Refinement On:</h3>
+            
+            <ul class="prompt-list">
+                <li>The core transformation it enables (not features or processes)</li>
+                <li>Why customers would become evangelists and refuse to go back</li>
+                <li>What new category it creates in the market</li>
+                <li>How it eliminates procurement anxiety and uncertainty</li>
+                <li>The emotional pull that creates believers, not just users</li>
+            </ul>
+            
+            <div class="reminder-box">
+                Remember: We're not wordsmithing marketing copy.<br>
+                We're defining the transformation that makes customers refuse to go back to the old way.
+            </div>
+        </div>
+        
+        <div class="timer">
+            ⏱️ 20 minutes
+        </div>
+    </div>
+</body>
+</html>

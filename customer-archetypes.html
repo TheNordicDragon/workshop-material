@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Transformation Exercise - Cronvall Vision Workshop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2d3748;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            color: #718096;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .instructions {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .instructions h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+        
+        .instructions li {
+            margin-bottom: 15px;
+        }
+        
+        .instructions strong {
+            color: #2d3748;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .archetypes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .archetype-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .archetype-card h2 {
+            color: #2d3748;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .archetype-role {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        
+        .archetype-section {
+            margin-bottom: 20px;
+        }
+        
+        .archetype-section h4 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .reality-box {
+            background: #f7fafc;
+            padding: 15px;
+            border-radius: 8px;
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+        
+        .quote-box {
+            background: #fff5f5;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            font-style: italic;
+            color: #718096;
+            margin-bottom: 15px;
+        }
+        
+        .transform-box {
+            background: #e6fffa;
+            padding: 15px;
+            border-radius: 8px;
+            color: #2d3748;
+        }
+        
+        .exercise-prompt {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .exercise-prompt h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        
+        .prompt-section {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 8px;
+        }
+        
+        .prompt-section h4 {
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        .prompt-section ul {
+            padding-left: 20px;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+        
+        .timer {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            font-size: 18px;
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        @media (max-width: 768px) {
+            .archetypes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .timer {
+                bottom: 20px;
+                right: 20px;
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Customer Transformation Exercise</h1>
+            <p class="subtitle">Step into your customer's shoes and explore their transformation</p>
+            
+            <div class="instructions">
+                <h3>Exercise Instructions</h3>
+                <ol>
+                    <li>
+                        <strong>Choose ONE archetype below to explore deeply</strong>
+                        Read through all four, then select the one that resonates most with your understanding of Cronvall's opportunity
+                    </li>
+                    <li>
+                        <strong>Work in teams of 2</strong>
+                        Discuss and explore your chosen archetype's transformation together
+                    </li>
+                    <li>
+                        <strong>You have 20 minutes to explore three areas:</strong>
+                        Part 1: Individual & Company Transformation<br>
+                        Part 2: Category Discovery<br>
+                        Part 3: The Advocacy Moment
+                    </li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="archetypes-grid">
+            <div class="archetype-card">
+                <h2>1. KLAUS - The Emergency Buyer</h2>
+                <div class="archetype-role">Site Manager</div>
+                
+                <div class="archetype-section">
+                    <div class="reality-box">
+                        <h4>Current Reality</h4>
+                        Regular supplier just failed him. Project halted, workers standing around, concrete truck coming tomorrow. Calling suppliers frantically while crew costs €500/hour in downtime. Cannot plan reliably because material delivery is unpredictable. His company faces massive cost overruns when projects stall—a single day of downtime can destroy the entire project margin.
+                    </div>
+                    
+                    <div class="quote-box">
+                        "It's not just about materials—my reputation, our project profitability, everything depends on whether suppliers actually deliver what they promise."
+                    </div>
+                    
+                    <div class="transform-box">
+                        <h4>Transformation Focus</h4>
+                        How does Klaus become known for handling urgent situations flawlessly? How does his company avoid catastrophic project losses and protect their margins?
+                    </div>
+                </div>
+            </div>
+            
+            <div class="archetype-card">
+                <h2>2. MARIA - The Category Expander</h2>
+                <div class="archetype-role">Site Manager</div>
+                
+                <div class="archetype-section">
+                    <div class="reality-box">
+                        <h4>Current Reality</h4>
+                        Managing 8-12 supplier relationships across limited categories. Company wants to expand into new project types but she can't confidently source unfamiliar materials. Excel sheets, WhatsApp groups, endless calls. No unified view across categories. Company growth limited by her procurement knowledge boundaries.
+                    </div>
+                    
+                    <div class="quote-box">
+                        "We could bid on bigger, more diverse projects if I could confidently source beyond our usual materials. But I don't even know who supplies what anymore."
+                    </div>
+                    
+                    <div class="transform-box">
+                        <h4>Transformation Focus</h4>
+                        How does Maria become the person who enables company expansion into new project types? How does the company capture growth opportunities they currently miss?
+                    </div>
+                </div>
+            </div>
+            
+            <div class="archetype-card">
+                <h2>3. ANTTI - The Digital Skeptic</h2>
+                <div class="archetype-role">Site Supervisor</div>
+                
+                <div class="archetype-section">
+                    <div class="reality-box">
+                        <h4>Current Reality</h4>
+                        Has ordered from the same K-Rauta salesperson for 15 years. Knows digitalization is coming but doesn't trust it. When his contact went on vacation, the replacement didn't know his needs—project planning fell apart. His company struggles to scale because everything depends on personal relationships. Project consistency varies wildly based on who's available.
+                    </div>
+                    
+                    <div class="quote-box">
+                        "I know younger guys do everything online, but I need to trust who I'm buying from. How do I know a platform will deliver when it matters?"
+                    </div>
+                    
+                    <div class="transform-box">
+                        <h4>Transformation Focus</h4>
+                        How does Antti discover that systems can be MORE trustworthy than relationships? How does his company achieve consistent, reliable operations regardless of personnel changes?
+                    </div>
+                </div>
+            </div>
+            
+            <div class="archetype-card">
+                <h2>4. RIIKKA - The Future-Ready Leader</h2>
+                <div class="archetype-role">Project Manager</div>
+                
+                <div class="archetype-section">
+                    <div class="reality-box">
+                        <h4>Current Reality</h4>
+                        Preparing her company for whatever comes next—centralized procurement, AI agents, sustainability requirements. Manages projects where some materials are contract-specified, others ad-hoc. Trying to build processes that will work in 5 years, not just today. Company risks being left behind if they don't adapt fast enough.
+                    </div>
+                    
+                    <div class="quote-box">
+                        "I see where this industry is heading. We need procurement capabilities that work today but also position us for tomorrow's reality."
+                    </div>
+                    
+                    <div class="transform-box">
+                        <h4>Transformation Focus</h4>
+                        How does Riikka future-proof her company's procurement? How does the company build resilience and adaptability for any scenario?
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise-prompt">
+            <h3>Your Exploration Framework</h3>
+            
+            <div class="prompt-section">
+                <h4>Part 1: Transformation Impact</h4>
+                <ul>
+                    <li>What planning challenges completely disappear?</li>
+                    <li>How does their professional role evolve? What are they now known for?</li>
+                    <li>What new opportunities open because they can plan reliably?</li>
+                    <li>What can their company now do differently?</li>
+                    <li>How does their company's operations change?</li>
+                </ul>
+            </div>
+            
+            <div class="prompt-section">
+                <h4>Part 2: Category Discovery</h4>
+                <ul>
+                    <li>How would they describe Cronvall to a colleague stuck in the old way?</li>
+                    <li>"This isn't just another supplier or procurement platform, it's..."</li>
+                    <li>What makes them say: "You need Cronvall—it's not what you think"?</li>
+                    <li>At what point do they stop seeing Cronvall as a "supplier" and start seeing it as...what?</li>
+                </ul>
+            </div>
+            
+            <div class="prompt-section">
+                <h4>Part 3: The Advocacy Moment</h4>
+                <ul>
+                    <li>What specific transformation makes going back impossible?</li>
+                    <li>Why would they evangelize this to other companies?</li>
+                    <li>What would make them trust Cronvall with MORE categories over time?</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="timer">
+            ⏱️ 20 minutes
+        </div>
+    </div>
+</body>
+</html>

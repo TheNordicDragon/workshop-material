@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronvall Vision Workshop - Exercise Materials</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        h1 {
+            color: white;
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 24px;
+            font-weight: 300;
+        }
+        
+        .date {
+            color: rgba(255,255,255,0.7);
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        
+        .exercises-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .exercise-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .exercise-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+        }
+        
+        .exercise-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            line-height: 50px;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .exercise-title {
+            color: #2d3748;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .exercise-description {
+            color: #718096;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+        
+        .exercise-time {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #f7fafc;
+            color: #4a5568;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+        
+        .footer a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            .subtitle {
+                font-size: 20px;
+            }
+            
+            .exercises-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Vision Workshop Materials</h1>
+            <p class="subtitle">Exercise Resources</p>
+            <p class="date">September 16, 2025</p>
+        </div>
+        
+        <div class="exercises-grid">
+            <a href="customer-archetypes.html" class="exercise-card">
+                <div class="exercise-number">1</div>
+                <h2 class="exercise-title">Customer Transformation</h2>
+                <p class="exercise-description">
+                    Explore four customer archetypes and discover their transformation journey from anxiety to confidence.
+                </p>
+                <span class="exercise-time">⏱️ 20 minutes</span>
+            </a>
+            
+            <a href="vision-directions.html" class="exercise-card">
+                <div class="exercise-number">2</div>
+                <h2 class="exercise-title">Vision Refinement</h2>
+                <p class="exercise-description">
+                    Review three vision directions and refine them—or create something completely new.
+                </p>
+                <span class="exercise-time">⏱️ 20 minutes</span>
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>Cronvall Vision Refinement Workshop</p>
+            <p style="margin-top: 10px;">Facilitated by Quantum Navigators</p>
+        </div>
+    </div>
+</body>
+</html>
